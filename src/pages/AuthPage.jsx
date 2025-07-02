@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import LoginForm from '@/components/auth/LoginForm';
 import SignUpForm from '@/components/auth/SignUpForm';
 import { FileText } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 
 const AuthPage = () => {
   return (
@@ -47,10 +48,5 @@ const AuthPage = () => {
     </>
   );
 };
-
-// Dummy Card component to make it work without circular dependencies
-const Card = ({ className, children }) => (
-  <div className={className}>{children}</div>
-);
 
 export default AuthPage;
