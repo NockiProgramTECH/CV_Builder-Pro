@@ -1,0 +1,32 @@
+{
+  "Standard": {
+    "primary": "#3b82f6",
+    "background": "#ffffff",
+    "text": "#1f2937",
+    "skillBackground": "#f8fafc"
+  },
+  "Google": {
+    "primary": "#4285F4",
+    "background": "#ffffff",
+    "text": "#202124",
+    "skillBackground": "#F8F9FA"
+  },
+  "Orange": {
+    "primary": "#FF7900",
+    "background": "#ffffff",
+    "text": "#000000",
+    "skillBackground": "#F9F9F9"
+  },
+  "TotalEnergies": {
+    "primary": "#0D3A8A",
+    "background": "#ffffff",
+    "text": "#000000",
+    "skillBackground": "#F5F5F5"
+  },
+  "Dark": {
+    "primary": "#58A6FF",
+    "background": "#0D1117",
+    "text": "#C9D1D9",
+    "skillBackground": "#161B22"
+  }
+}

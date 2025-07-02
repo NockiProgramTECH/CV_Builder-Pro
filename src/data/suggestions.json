@@ -1,0 +1,111 @@
+{
+  "fr": {
+    "skills": [
+      "Gestion de projet",
+      "Suite Microsoft Office (Word, Excel, PowerPoint)",
+      "Développement Web (HTML, CSS, JavaScript)",
+      "React.js",
+      "Node.js",
+      "Analyse de données",
+      "Marketing digital",
+      "Communication",
+      "Travail d'équipe",
+      "Adobe Creative Suite (Photoshop, Illustrator)"
+    ],
+    "education": [
+      "Licence en Informatique",
+      "Master en Marketing Digital",
+      "BTS en Commerce International",
+      "DUT en Génie Électrique et Informatique Industrielle",
+      "Baccalauréat Scientifique"
+    ],
+    "languages": [
+      "Anglais",
+      "Espagnol",
+      "Allemand",
+      "Italien",
+      "Chinois (Mandarin)",
+      "Arabe"
+    ],
+    "languageLevels": [
+      "Débutant (A1)",
+      "Élémentaire (A2)",
+      "Intermédiaire (B1)",
+      "Intermédiaire-Avancé (B2)",
+      "Avancé (C1)",
+      "Bilingue / Natif (C2)"
+    ]
+  },
+  "en": {
+    "skills": [
+      "Project Management",
+      "Microsoft Office Suite (Word, Excel, PowerPoint)",
+      "Web Development (HTML, CSS, JavaScript)",
+      "React.js",
+      "Node.js",
+      "Data Analysis",
+      "Digital Marketing",
+      "Communication",
+      "Teamwork",
+      "Adobe Creative Suite (Photoshop, Illustrator)"
+    ],
+    "education": [
+      "Bachelor of Science in Computer Science",
+      "Master of Business Administration (MBA)",
+      "Associate Degree in Graphic Design",
+      "High School Diploma"
+    ],
+    "languages": [
+      "French",
+      "Spanish",
+      "German",
+      "Italian",
+      "Chinese (Mandarin)",
+      "Arabic"
+    ],
+    "languageLevels": [
+      "Beginner (A1)",
+      "Elementary (A2)",
+      "Intermediate (B1)",
+      "Upper-Intermediate (B2)",
+      "Advanced (C1)",
+      "Fluent / Native (C2)"
+    ]
+  },
+  "es": {
+    "skills": [
+      "Gestión de Proyectos",
+      "Paquete Microsoft Office (Word, Excel, PowerPoint)",
+      "Desarrollo Web (HTML, CSS, JavaScript)",
+      "React.js",
+      "Node.js",
+      "Análisis de Datos",
+      "Marketing Digital",
+      "Comunicación",
+      "Trabajo en Equipo",
+      "Adobe Creative Suite (Photoshop, Illustrator)"
+    ],
+    "education": [
+      "Grado en Ingeniería Informática",
+      "Máster en Dirección de Empresas (MBA)",
+      "Técnico Superior en Diseño Gráfico",
+      "Bachillerato"
+    ],
+    "languages": [
+      "Francés",
+      "Inglés",
+      "Alemán",
+      "Italiano",
+      "Chino (Mandarín)",
+      "Árabe"
+    ],
+    "languageLevels": [
+      "Principiante (A1)",
+      "Elemental (A2)",
+      "Intermedio (B1)",
+      "Intermedio-Alto (B2)",
+      "Avanzado (C1)",
+      "Bilingüe / Nativo (C2)"
+    ]
+  }
+}
