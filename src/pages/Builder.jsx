@@ -5,10 +5,11 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import CVForm from '@/components/CVForm';
 import CVPreview from '@/components/CVPreview';
+import AboutSection from '@/components/AboutSection';
 import { useCVData } from '@/hooks/useCVData';
 import { generatePDF } from '@/utils/pdfGenerator';
 import { saveCVToDatabase } from '@/utils/cvStorage';
-import { Download, FileText, Trash2, Eye, EyeOff, Languages, Save } from 'lucide-react';
+import { Download, FileText, Trash2, Eye, EyeOff, Languages, Save, Info } from 'lucide-react';
 import { Label } from '@/components/ui/label';
 import {
   Select,
@@ -17,6 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import suggestions from '@/data/suggestions.json';
 import themes from '@/data/themes.json';
 
@@ -127,108 +129,127 @@ function Builder() {
         </motion.header>
 
         <main className="container mx-auto px-4 py-8">
-          <div className={`grid gap-8 ${isPreviewVisible ? 'lg:grid-cols-2' : 'lg:grid-cols-1'}`}>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6"
-            >
-              <div className="text-center lg:text-left">
-                <h2 className="text-3xl font-bold gradient-text mb-2">
-                  Créez votre CV professionnel
-                </h2>
-                <p className="text-white/80 text-lg">
-                  Remplissez les informations ci-dessous et visualisez votre CV en temps réel.
-                </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  variant="outline"
-                  onClick={togglePreview}
-                  className="bg-white/10 border-white/20 text-white hover:bg-white/20 flex-1"
-                >
-                  {isPreviewVisible ? <EyeOff className="w-4 h-4 mr-2" /> : <Eye className="w-4 h-4 mr-2" />}
-                  {isPreviewVisible ? 'Masquer aperçu' : 'Afficher aperçu'}
-                </Button>
-                
-                <Button
-                  onClick={handleSaveCV}
-                  disabled={isSaving}
-                  className="bg-green-600 hover:bg-green-700 text-white font-medium flex-1"
-                >
-                  <Save className="w-4 h-4 mr-2" />
-                  {isSaving ? 'Sauvegarde...' : 'Sauvegarder'}
-                </Button>
-                
-                <Button
-                  variant="outline"
-                  onClick={handleReset}
-                  className="bg-white/10 border-white/20 text-white hover:bg-white/20 flex-1"
-                >
-                  <Trash2 className="w-4 h-4 mr-2" />
-                  Réinitialiser
-                </Button>
-                
-                <Button
-                  onClick={handleGeneratePDF}
-                  disabled={isGeneratingPDF}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium flex-1"
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  {isGeneratingPDF ? 'Génération...' : 'Télécharger PDF'}
-                </Button>
-              </div>
+          <Tabs defaultValue="builder" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 bg-white/10 border-white/20 mb-8">
+              <TabsTrigger value="builder" className="flex items-center">
+                <FileText className="w-4 h-4 mr-2" />
+                Créateur de CV
+              </TabsTrigger>
+              <TabsTrigger value="about" className="flex items-center">
+                <Info className="w-4 h-4 mr-2" />
+                À propos
+              </TabsTrigger>
+            </TabsList>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="glass-effect border-white/20 p-6 rounded-lg"
-              >
-                <Label htmlFor="cv-language" className="text-lg font-semibold gradient-text flex items-center">
-                  <Languages className="w-5 h-5 mr-2" />
-                  Langue du CV
-                </Label>
-                <p className="text-white/70 text-sm mb-4">Choisissez la langue pour obtenir des suggestions adaptées.</p>
-                <Select value={language} onValueChange={setLanguage}>
-                  <SelectTrigger id="cv-language" className="w-full bg-white/10 border-white/20 text-white">
-                    <SelectValue placeholder="Choisir la langue" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="fr">Français</SelectItem>
-                    <SelectItem value="en">English</SelectItem>
-                    <SelectItem value="es">Español</SelectItem>
-                  </SelectContent>
-                </Select>
-              </motion.div>
-              
-              <CVForm cvData={cvData} setCvData={setCvData} suggestions={suggestions[language]} theme={theme} setTheme={setTheme} />
-            </motion.div>
+            <TabsContent value="about">
+              <AboutSection />
+            </TabsContent>
 
-            {isPreviewVisible && (
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="space-y-6 sticky top-24 h-fit"
-              >
-                <div className="text-center lg:text-left">
-                  <h2 className="text-2xl font-bold gradient-text mb-2">
-                    Aperçu de votre CV
-                  </h2>
-                  <p className="text-white/80">
-                    Voici comment votre CV apparaîtra.
-                  </p>
-                </div>
-                
-                <div id="cv-preview-container">
-                  <CVPreview cvData={cvData} theme={theme} />
-                </div>
-              </motion.div>
-            )}
-          </div>
+            <TabsContent value="builder">
+              <div className={`grid gap-8 ${isPreviewVisible ? 'lg:grid-cols-2' : 'lg:grid-cols-1'}`}>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="space-y-6"
+                >
+                  <div className="text-center lg:text-left">
+                    <h2 className="text-3xl font-bold gradient-text mb-2">
+                      Créez votre CV professionnel
+                    </h2>
+                    <p className="text-white/80 text-lg">
+                      Remplissez les informations ci-dessous et visualisez votre CV en temps réel.
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button
+                      variant="outline"
+                      onClick={togglePreview}
+                      className="bg-white/10 border-white/20 text-white hover:bg-white/20 flex-1"
+                    >
+                      {isPreviewVisible ? <EyeOff className="w-4 h-4 mr-2" /> : <Eye className="w-4 h-4 mr-2" />}
+                      {isPreviewVisible ? 'Masquer aperçu' : 'Afficher aperçu'}
+                    </Button>
+                    
+                    <Button
+                      onClick={handleSaveCV}
+                      disabled={isSaving}
+                      className="bg-green-600 hover:bg-green-700 text-white font-medium flex-1"
+                    >
+                      <Save className="w-4 h-4 mr-2" />
+                      {isSaving ? 'Sauvegarde...' : 'Sauvegarder'}
+                    </Button>
+                    
+                    <Button
+                      variant="outline"
+                      onClick={handleReset}
+                      className="bg-white/10 border-white/20 text-white hover:bg-white/20 flex-1"
+                    >
+                      <Trash2 className="w-4 h-4 mr-2" />
+                      Réinitialiser
+                    </Button>
+                    
+                    <Button
+                      onClick={handleGeneratePDF}
+                      disabled={isGeneratingPDF}
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium flex-1"
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      {isGeneratingPDF ? 'Génération...' : 'Télécharger PDF'}
+                    </Button>
+                  </div>
+
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="glass-effect border-white/20 p-6 rounded-lg"
+                  >
+                    <Label htmlFor="cv-language" className="text-lg font-semibold gradient-text flex items-center">
+                      <Languages className="w-5 h-5 mr-2" />
+                      Langue du CV
+                    </Label>
+                    <p className="text-white/70 text-sm mb-4">Choisissez la langue pour obtenir des suggestions adaptées.</p>
+                    <Select value={language} onValueChange={setLanguage}>
+                      <SelectTrigger id="cv-language" className="w-full bg-white/10 border-white/20 text-white">
+                        <SelectValue placeholder="Choisir la langue" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="fr">Français</SelectItem>
+                        <SelectItem value="en">English</SelectItem>
+                        <SelectItem value="es">Español</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </motion.div>
+                  
+                  <CVForm cvData={cvData} setCvData={setCvData} suggestions={suggestions[language]} theme={theme} setTheme={setTheme} />
+                </motion.div>
+
+                {isPreviewVisible && (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="space-y-6 sticky top-24 h-fit"
+                  >
+                    <div className="text-center lg:text-left">
+                      <h2 className="text-2xl font-bold gradient-text mb-2">
+                        Aperçu de votre CV
+                      </h2>
+                      <p className="text-white/80">
+                        Voici comment votre CV apparaîtra.
+                      </p>
+                    </div>
+                    
+                    <div id="cv-preview-container">
+                      <CVPreview cvData={cvData} theme={theme} />
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+            </TabsContent>
+          </Tabs>
         </main>
 
         <footer className="bg-white/5 backdrop-blur-lg border-t border-white/10 mt-16">
