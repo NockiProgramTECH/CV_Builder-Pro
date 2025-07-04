@@ -7,8 +7,8 @@ import CVForm from '@/components/CVForm';
 import CVPreview from '@/components/CVPreview';
 import { useCVData } from '@/hooks/useCVData';
 import { generatePDF } from '@/utils/pdfGenerator';
-import { useAuth } from '@/contexts/SupabaseAuthContext';
-import { Download, FileText, Trash2, Eye, EyeOff, Languages, LogOut } from 'lucide-react';
+import { saveCVToDatabase } from '@/utils/cvStorage';
+import { Download, FileText, Trash2, Eye, EyeOff, Languages, Save } from 'lucide-react';
 import { Label } from '@/components/ui/label';
 import {
   Select,
@@ -19,27 +19,17 @@ import {
 } from "@/components/ui/select";
 import suggestions from '@/data/suggestions.json';
 import themes from '@/data/themes.json';
-import ThemeCustomizer from '@/components/form/ThemeCustomizer';
 
 function Builder() {
   const { cvData, setCvData, resetCVData } = useCVData();
   const { toast } = useToast();
-  const { user, signOut } = useAuth();
   const [isPreviewVisible, setIsPreviewVisible] = useState(true);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [language, setLanguage] = useState('fr');
   const [theme, setTheme] = useState(themes['Standard']);
 
   const handleGeneratePDF = async () => {
-    if (!user) {
-      toast({
-        title: "Connexion requise",
-        description: "Veuillez vous connecter pour télécharger votre CV.",
-        variant: "destructive"
-      });
-      return;
-    }
-
     try {
       setIsGeneratingPDF(true);
       if (!cvData.personalInfo.firstName || !cvData.personalInfo.lastName) {
@@ -67,6 +57,34 @@ function Builder() {
     }
   };
 
+  const handleSaveCV = async () => {
+    try {
+      setIsSaving(true);
+      if (!cvData.personalInfo.firstName || !cvData.personalInfo.lastName) {
+        toast({
+          title: "Informations manquantes",
+          description: "Veuillez remplir au moins votre nom et prénom pour sauvegarder.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      await saveCVToDatabase(cvData);
+      toast({
+        title: "CV sauvegardé !",
+        description: "Votre CV a été enregistré avec succès.",
+      });
+    } catch (error) {
+      toast({
+        title: "Erreur de sauvegarde",
+        description: "Une erreur est survenue lors de la sauvegarde.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
   const handleReset = () => {
     resetCVData();
     toast({
@@ -82,8 +100,8 @@ function Builder() {
   return (
     <>
       <Helmet>
-        <title>Créateur de CV Professionnel - Générateur de CV en ligne</title>
-        <meta name="description" content="Créez votre CV professionnel en ligne avec notre générateur moderne. Interface intuitive, aperçu en temps réel et export PDF gratuit." />
+        <title>Créateur de CV Professionnel - Générateur de CV en ligne gratuit</title>
+        <meta name="description" content="Créez votre CV professionnel en ligne gratuitement avec notre générateur moderne. Interface intuitive, aperçu en temps réel et export PDF gratuit." />
       </Helmet>
       
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
@@ -101,14 +119,8 @@ function Builder() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold gradient-text">CV Builder Pro</h1>
-                  <p className="text-sm text-white/70">Connecté en tant que {user?.user_metadata?.full_name || user?.email}</p>
+                  <p className="text-sm text-white/70">Créateur de CV gratuit et sans inscription</p>
                 </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <Button onClick={signOut} variant="outline" className="bg-red-500/20 border-red-500/50 text-white hover:bg-red-500/40">
-                  <LogOut className="w-4 h-4 mr-2" /> Déconnexion
-                </Button>
               </div>
             </div>
           </div>
@@ -139,6 +151,15 @@ function Builder() {
                 >
                   {isPreviewVisible ? <EyeOff className="w-4 h-4 mr-2" /> : <Eye className="w-4 h-4 mr-2" />}
                   {isPreviewVisible ? 'Masquer aperçu' : 'Afficher aperçu'}
+                </Button>
+                
+                <Button
+                  onClick={handleSaveCV}
+                  disabled={isSaving}
+                  className="bg-green-600 hover:bg-green-700 text-white font-medium flex-1"
+                >
+                  <Save className="w-4 h-4 mr-2" />
+                  {isSaving ? 'Sauvegarde...' : 'Sauvegarder'}
                 </Button>
                 
                 <Button
@@ -214,7 +235,7 @@ function Builder() {
           <div className="container mx-auto px-4 py-8">
             <div className="text-center">
               <p className="text-white/60">
-                © 2025 CV Builder Pro. Créez votre CV professionnel en quelques minutes.
+                © 2025 CV Builder Pro. Créez votre CV professionnel gratuitement et sans inscription.
               </p>
             </div>
           </div>
