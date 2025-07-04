@@ -121,7 +121,7 @@ function Builder() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold gradient-text">CV Builder Pro</h1>
-                  <p className="text-sm text-white/70">Créateur de CV gratuit et sans inscription</p>
+                  <p className="text-sm text-white/70">Créateur de CV gratuit et libre d'accès</p>
                 </div>
               </div>
             </div>
@@ -254,9 +254,12 @@ function Builder() {
 
         <footer className="bg-white/5 backdrop-blur-lg border-t border-white/10 mt-16">
           <div className="container mx-auto px-4 py-8">
-            <div className="text-center">
-              <p className="text-white/60">
-                © 2025 CV Builder Pro. Créez votre CV professionnel gratuitement et sans inscription.
+            <div className="text-center space-y-2">
+              <p className="text-white/80 font-medium">
+                Développé par <span className="text-blue-400 font-bold">LANKOANDE ENOCK</span>
+              </p>
+              <p className="text-white/60 text-sm">
+                © 2025 CV Builder Pro - Générateur de CV professionnel gratuit
               </p>
             </div>
           </div>
