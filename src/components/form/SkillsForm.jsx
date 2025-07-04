@@ -5,9 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Plus, Trash2 } from 'lucide-react';
-import AutoCompleteInput from './AutoCompleteInput';
 
-const SkillsForm = ({ cvData, setCvData, suggestions }) => {
+const SkillsForm = ({ cvData, setCvData }) => {
   const addSkill = () => {
     setCvData(prev => ({
       ...prev,
@@ -65,11 +64,11 @@ const SkillsForm = ({ cvData, setCvData, suggestions }) => {
             >
               <div className="flex-1">
                 <Label>Nom de la compétence</Label>
-                <AutoCompleteInput
+                <Input
                   value={skill.name}
-                  onChange={(value) => updateSkill(skill.id, 'name', value)}
-                  suggestions={suggestions.skills}
-                  placeholder="Ex: Gestion de projet"
+                  onChange={(e) => updateSkill(skill.id, 'name', e.target.value)}
+                  placeholder="Ex: Python, Gestion de projet, React.js..."
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 />
               </div>
               <div className="w-40">
@@ -77,7 +76,7 @@ const SkillsForm = ({ cvData, setCvData, suggestions }) => {
                 <Input
                   value={skill.level}
                   onChange={(e) => updateSkill(skill.id, 'level', e.target.value)}
-                  placeholder="Ex: Avancé"
+                  placeholder="Ex: Avancé, Expert..."
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 />
               </div>
