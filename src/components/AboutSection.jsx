@@ -21,10 +21,10 @@ const AboutSection = () => {
         <CardContent className="p-6 space-y-6">
           {/* Photo et intro */}
           <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-500 to-purple-600 flex-shrink-0">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-500 flex-shrink-0 shadow-lg">
               <img 
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                alt="Développeur passionné" 
+                src="/1750536226127 copy.jpg" 
+                alt="Développeur Python spécialisé en réseaux et télécoms" 
                 className="w-full h-full object-cover"
               />
             </div>
@@ -33,9 +33,9 @@ const AboutSection = () => {
                 🌿 Entre code Python et infrastructures réseau : un parcours qui grandit
               </h3>
               <p className="text-white/80 leading-relaxed">
-                Un développeur au regard déterminé, dans un environnement qui évoque la croissance - 
-                métaphore parfaite pour un parcours tech en pleine évolution. Cette approche professionnelle 
-                reflète un équilibre entre technique et vision.
+                Sur cette photo, on découvre un développeur au regard déterminé, dans un environnement verdoyant qui évoque la croissance - 
+                métaphore parfaite pour un parcours tech en pleine évolution. Cette approche professionnelle en chemise blanche 
+                reflète un équilibre entre rigueur technique et vision d'avenir.
               </p>
             </div>
           </div>
@@ -53,8 +53,8 @@ const AboutSection = () => {
                 <h4 className="font-semibold text-green-400">🚀 Les débuts</h4>
               </div>
               <p className="text-white/80 text-sm leading-relaxed">
-                Comme beaucoup de passionnés, exploration de Python - ce langage élégant qui ouvre tant de portes. 
-                Premiers scripts d'automatisation réseau, premières analyses de logs SNMP... Ces moments où le code 
+                Passionné par l'automatisation et les infrastructures, j'ai commencé par coder en Python pour scripter des tâches réseaux. 
+                Premiers scripts d'analyse SNMP, premières automatisations de logs... Ces moments magiques où le code 
                 dialogue avec l'infrastructure physique.
               </p>
             </motion.div>
@@ -70,9 +70,9 @@ const AboutSection = () => {
                 <h4 className="font-semibold text-yellow-400">⚡ Le défi</h4>
               </div>
               <p className="text-white/80 text-sm leading-relaxed">
-                Maîtriser l'art de jongler entre les couches OSI et les lignes de code. Débugger un script Python 
-                qui analyse du trafic réseau tout en configurant des VLANs sur du matériel Cisco. Faire communiquer 
-                le monde logiciel avec les protocoles télécom.
+                Jouer entre les couches OSI : résoudre des problèmes de latence en Python tout en configurant des VLANs sur du matériel Cisco. 
+                Faire communiquer mes scripts de supervision avec des APIs RESTful d'équipements télécom. 
+                L'art de maîtriser le software ET le hardware.
               </p>
             </motion.div>
 
@@ -84,12 +84,11 @@ const AboutSection = () => {
             >
               <div className="flex items-center mb-3">
                 <Code className="w-5 h-5 text-blue-400 mr-2" />
-                <h4 className="font-semibold text-blue-400">🏆 Ta fierté</h4>
+                <h4 className="font-semibold text-blue-400">🏆 Ma fierté</h4>
               </div>
               <p className="text-white/80 text-sm leading-relaxed">
-                Ces outils de monitoring hybrides développés, mélangeant Python (Scapy, Netmiko, Pandas) avec une 
-                compréhension profonde des réseaux et télécoms. Chaque script qui optimise une infrastructure, 
-                chaque analyse qui prévient une panne.
+                Création d'outils de monitoring hybrides (Python + librairies réseaux) qui prédisent les congestions réseau grâce au Machine Learning. 
+                Chaque script Scapy qui optimise une infrastructure, chaque analyse Pandas qui prévient une panne télécom.
               </p>
             </motion.div>
           </div>
@@ -103,9 +102,9 @@ const AboutSection = () => {
           >
             <blockquote className="text-center">
               <p className="text-lg font-medium text-white italic mb-3">
-                "Mon code parle Python, mes réseaux parlent TCP/IP - et parfois les deux conversent ensemble pour créer de la magie."
+                "Rien ne me motive plus qu'un problème entre la couche 2 et la couche 7... et un bon café pour debugger mon Python !"
               </p>
-              <footer className="text-blue-300 text-sm">— Philosophie du développeur réseau</footer>
+              <footer className="text-blue-300 text-sm">— Ma philosophie de développeur réseau</footer>
             </blockquote>
           </motion.div>
 
@@ -113,27 +112,43 @@ const AboutSection = () => {
           <div className="bg-white/5 rounded-lg p-4 border border-white/10">
             <h4 className="font-semibold text-white mb-3 flex items-center">
               <Wifi className="w-5 h-5 text-purple-400 mr-2" />
-              🔧 Stack technique unique
+              🔧 Ma stack technique unique
             </h4>
             <div className="grid md:grid-cols-3 gap-4 text-sm">
               <div>
                 <span className="text-blue-400 font-medium">Langage :</span>
-                <p className="text-white/80">Python (automatisation, analyse, monitoring)</p>
+                <p className="text-white/80">Python (scripts, Flask/Django, Scapy, Pandas)</p>
               </div>
               <div>
                 <span className="text-green-400 font-medium">Réseaux :</span>
-                <p className="text-white/80">Protocoles TCP/IP, Wireshark, GNS3</p>
+                <p className="text-white/80">Protocoles TCP/IP, Wireshark, GNS3, Netmiko</p>
               </div>
               <div>
                 <span className="text-purple-400 font-medium">Télécom :</span>
-                <p className="text-white/80">SDN/NFV, VoIP, infrastructures modernes</p>
+                <p className="text-white/80">SDN/NFV, VoIP (Asterisk), infrastructures 5G</p>
               </div>
             </div>
           </div>
 
+          {/* Call to action */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+            className="bg-white/5 rounded-lg p-4 border border-white/10 text-center"
+          >
+            <p className="text-white/80 mb-2">
+              <strong className="text-blue-400">👉 Et toi, tu préfères coder pour le cloud ou les infrastructures physiques ?</strong>
+            </p>
+            <p className="text-white/60 text-sm">
+              Tu viens aussi des télécoms ou tu mixes un autre domaine avec le dev ? 
+              Partage ton stack en commentaire sur mes réseaux sociaux !
+            </p>
+          </motion.div>
+
           {/* Hashtags */}
           <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-            {['#Python', '#Réseaux', '#Télécom', '#DevOps', '#Infrastructure', '#TechPassion'].map((tag) => (
+            {['#Python', '#Réseaux', '#Télécom', '#DevOps', '#Infrastructure', '#TechPassion', '#Scapy', '#Netmiko'].map((tag) => (
               <span 
                 key={tag}
                 className="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs font-medium border border-blue-500/30"
