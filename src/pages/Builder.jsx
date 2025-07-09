@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import suggestions from '@/data/suggestions.json';
-import themes from '@/data/themes.json';
+import templateThemes from '@/data/templateThemes.json';
 
 function Builder() {
   const { cvData, setCvData, resetCVData } = useCVData();
@@ -29,7 +29,8 @@ function Builder() {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [language, setLanguage] = useState('fr');
-  const [theme, setTheme] = useState(themes['Standard']);
+  const [selectedTemplate, setSelectedTemplate] = useState('modern');
+  const [theme, setTheme] = useState(templateThemes.modern.Standard);
 
   const handleGeneratePDF = async () => {
     try {
@@ -223,7 +224,15 @@ function Builder() {
                     </Select>
                   </motion.div>
                   
-                  <CVForm cvData={cvData} setCvData={setCvData} suggestions={suggestions[language]} theme={theme} setTheme={setTheme} />
+                  <CVForm 
+                    cvData={cvData} 
+                    setCvData={setCvData} 
+                    suggestions={suggestions[language]} 
+                    theme={theme} 
+                    setTheme={setTheme}
+                    selectedTemplate={selectedTemplate}
+                    setSelectedTemplate={setSelectedTemplate}
+                  />
                 </motion.div>
 
                 {isPreviewVisible && (
@@ -243,7 +252,11 @@ function Builder() {
                     </div>
                     
                     <div id="cv-preview-container">
-                      <CVPreview cvData={cvData} theme={theme} />
+                      <CVPreview 
+                        cvData={cvData} 
+                        theme={theme} 
+                        selectedTemplate={selectedTemplate}
+                      />
                     </div>
                   </motion.div>
                 )}

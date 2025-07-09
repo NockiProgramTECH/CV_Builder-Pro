@@ -1,0 +1,152 @@
+{
+  "modern": {
+    "Standard": {
+      "primary": "#3b82f6",
+      "secondary": "#8b5cf6",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Sunset": {
+      "primary": "#f59e0b",
+      "secondary": "#ef4444",
+      "accent": "#ec4899",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Ocean": {
+      "primary": "#0ea5e9",
+      "secondary": "#06b6d4",
+      "accent": "#0891b2",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Forest": {
+      "primary": "#059669",
+      "secondary": "#10b981",
+      "accent": "#34d399",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    }
+  },
+  "classic": {
+    "Standard": {
+      "primary": "#1f2937",
+      "secondary": "#374151",
+      "accent": "#6b7280",
+      "background": "#ffffff",
+      "text": "#111827"
+    },
+    "Navy": {
+      "primary": "#1e3a8a",
+      "secondary": "#3730a3",
+      "accent": "#4338ca",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Burgundy": {
+      "primary": "#991b1b",
+      "secondary": "#b91c1c",
+      "accent": "#dc2626",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Emerald": {
+      "primary": "#065f46",
+      "secondary": "#047857",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    }
+  },
+  "creative": {
+    "Standard": {
+      "primary": "#8b5cf6",
+      "secondary": "#ec4899",
+      "accent": "#f59e0b",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Neon": {
+      "primary": "#a855f7",
+      "secondary": "#06b6d4",
+      "accent": "#10b981",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Warm": {
+      "primary": "#dc2626",
+      "secondary": "#ea580c",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Cool": {
+      "primary": "#0891b2",
+      "secondary": "#0284c7",
+      "accent": "#2563eb",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    }
+  },
+  "minimalist": {
+    "Standard": {
+      "primary": "#374151",
+      "secondary": "#6b7280",
+      "accent": "#9ca3af",
+      "background": "#ffffff",
+      "text": "#111827"
+    },
+    "Monochrome": {
+      "primary": "#000000",
+      "secondary": "#404040",
+      "accent": "#808080",
+      "background": "#ffffff",
+      "text": "#000000"
+    },
+    "Soft": {
+      "primary": "#6b7280",
+      "secondary": "#9ca3af",
+      "accent": "#d1d5db",
+      "background": "#ffffff",
+      "text": "#374151"
+    },
+    "Blue": {
+      "primary": "#1e40af",
+      "secondary": "#3b82f6",
+      "accent": "#93c5fd",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    }
+  },
+  "professional": {
+    "Standard": {
+      "primary": "#1f2937",
+      "secondary": "#374151",
+      "accent": "#6b7280",
+      "background": "#ffffff",
+      "text": "#111827"
+    },
+    "Corporate": {
+      "primary": "#1e40af",
+      "secondary": "#3730a3",
+      "accent": "#4338ca",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Executive": {
+      "primary": "#7c2d12",
+      "secondary": "#92400e",
+      "accent": "#a16207",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Tech": {
+      "primary": "#0f172a",
+      "secondary": "#1e293b",
+      "accent": "#334155",
+      "background": "#ffffff",
+      "text": "#020617"
+    }
+  }
+}

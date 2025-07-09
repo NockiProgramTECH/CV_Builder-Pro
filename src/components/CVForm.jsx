@@ -5,12 +5,23 @@ import EducationForm from './form/EducationForm';
 import SkillsForm from './form/SkillsForm';
 import LanguagesForm from './form/LanguagesForm';
 import InterestsForm from './form/InterestsForm';
-import ThemeCustomizer from './form/ThemeCustomizer';
+import TemplateSelector from './TemplateSelector';
+import TemplateThemeCustomizer from './form/TemplateThemeCustomizer';
 
-const CVForm = ({ cvData, setCvData, suggestions, theme, setTheme }) => {
+const CVForm = ({ cvData, setCvData, suggestions, theme, setTheme, selectedTemplate, setSelectedTemplate }) => {
   return (
     <div className="space-y-6">
-      <ThemeCustomizer theme={theme} setTheme={setTheme} />
+      <TemplateSelector 
+        selectedTemplate={selectedTemplate}
+        onTemplateChange={setSelectedTemplate}
+        cvData={cvData}
+        theme={theme}
+      />
+      <TemplateThemeCustomizer 
+        selectedTemplate={selectedTemplate}
+        theme={theme} 
+        setTheme={setTheme} 
+      />
       <PersonalInfoForm cvData={cvData} setCvData={setCvData} />
       <ExperienceForm cvData={cvData} setCvData={setCvData} />
       <EducationForm cvData={cvData} setCvData={setCvData} suggestions={suggestions} />
