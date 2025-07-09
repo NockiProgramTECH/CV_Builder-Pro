@@ -148,5 +148,155 @@
       "background": "#ffffff",
       "text": "#020617"
     }
+  },
+  "academic": {
+    "Standard": {
+      "primary": "#1e40af",
+      "secondary": "#3730a3",
+      "accent": "#4338ca",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Oxford": {
+      "primary": "#7c2d12",
+      "secondary": "#92400e",
+      "accent": "#a16207",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Cambridge": {
+      "primary": "#065f46",
+      "secondary": "#047857",
+      "accent": "#059669",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Harvard": {
+      "primary": "#991b1b",
+      "secondary": "#b91c1c",
+      "accent": "#dc2626",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    }
+  },
+  "executive": {
+    "Standard": {
+      "primary": "#1f2937",
+      "secondary": "#374151",
+      "accent": "#6b7280",
+      "background": "#ffffff",
+      "text": "#111827"
+    },
+    "Platinum": {
+      "primary": "#475569",
+      "secondary": "#64748b",
+      "accent": "#94a3b8",
+      "background": "#ffffff",
+      "text": "#0f172a"
+    },
+    "Gold": {
+      "primary": "#a16207",
+      "secondary": "#ca8a04",
+      "accent": "#eab308",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Royal": {
+      "primary": "#3730a3",
+      "secondary": "#4338ca",
+      "accent": "#6366f1",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    }
+  },
+  "twocolumn": {
+    "Standard": {
+      "primary": "#3b82f6",
+      "secondary": "#8b5cf6",
+      "accent": "#06b6d4",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Corporate": {
+      "primary": "#1e40af",
+      "secondary": "#3730a3",
+      "accent": "#4338ca",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Modern": {
+      "primary": "#059669",
+      "secondary": "#0891b2",
+      "accent": "#7c3aed",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Vibrant": {
+      "primary": "#dc2626",
+      "secondary": "#ea580c",
+      "accent": "#d97706",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    }
+  },
+  "compact": {
+    "Standard": {
+      "primary": "#374151",
+      "secondary": "#6b7280",
+      "accent": "#9ca3af",
+      "background": "#ffffff",
+      "text": "#111827"
+    },
+    "Efficient": {
+      "primary": "#1e40af",
+      "secondary": "#3b82f6",
+      "accent": "#60a5fa",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Clean": {
+      "primary": "#059669",
+      "secondary": "#10b981",
+      "accent": "#34d399",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Sharp": {
+      "primary": "#7c2d12",
+      "secondary": "#92400e",
+      "accent": "#a16207",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    }
+  },
+  "elegant": {
+    "Standard": {
+      "primary": "#6b7280",
+      "secondary": "#9ca3af",
+      "accent": "#d1d5db",
+      "background": "#ffffff",
+      "text": "#111827"
+    },
+    "Sophisticated": {
+      "primary": "#7c2d12",
+      "secondary": "#92400e",
+      "accent": "#a16207",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Refined": {
+      "primary": "#1e3a8a",
+      "secondary": "#3730a3",
+      "accent": "#4338ca",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    },
+    "Luxury": {
+      "primary": "#581c87",
+      "secondary": "#7c3aed",
+      "accent": "#a855f7",
+      "background": "#ffffff",
+      "text": "#1f2937"
+    }
   }
 }

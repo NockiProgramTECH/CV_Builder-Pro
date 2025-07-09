@@ -11,6 +11,11 @@ import ClassicTemplate from './templates/ClassicTemplate';
 import CreativeTemplate from './templates/CreativeTemplate';
 import MinimalistTemplate from './templates/MinimalistTemplate';
 import ProfessionalTemplate from './templates/ProfessionalTemplate';
+import AcademicTemplate from './templates/AcademicTemplate';
+import ExecutiveTemplate from './templates/ExecutiveTemplate';
+import TwoColumnTemplate from './templates/TwoColumnTemplate';
+import CompactTemplate from './templates/CompactTemplate';
+import ElegantTemplate from './templates/ElegantTemplate';
 
 const templates = [
   {
@@ -57,6 +62,51 @@ const templates = [
     preview: '/api/placeholder/300/400',
     category: 'Corporate',
     features: ['Sidebar colorée', 'Layout structuré', 'Style corporate']
+  },
+  {
+    id: 'academic',
+    name: 'Académique',
+    description: 'Template universitaire et recherche scientifique',
+    component: AcademicTemplate,
+    preview: '/api/placeholder/300/400',
+    category: 'Académique',
+    features: ['Style universitaire', 'Focus recherche', 'Format académique']
+  },
+  {
+    id: 'executive',
+    name: 'Exécutif',
+    description: 'Template pour dirigeants et cadres supérieurs',
+    component: ExecutiveTemplate,
+    preview: '/api/placeholder/300/400',
+    category: 'Direction',
+    features: ['Design premium', 'Layout exécutif', 'Style leadership']
+  },
+  {
+    id: 'twocolumn',
+    name: 'Deux Colonnes',
+    description: 'Layout classique avec sidebar et contenu principal',
+    component: TwoColumnTemplate,
+    preview: '/api/placeholder/300/400',
+    category: 'Classique',
+    features: ['Sidebar colorée', 'Layout équilibré', 'Organisation claire']
+  },
+  {
+    id: 'compact',
+    name: 'Compact',
+    description: 'Template condensé pour maximiser le contenu',
+    component: CompactTemplate,
+    preview: '/api/placeholder/300/400',
+    category: 'Efficace',
+    features: ['Format condensé', 'Optimisé espace', 'Lecture rapide']
+  },
+  {
+    id: 'elegant',
+    name: 'Élégant',
+    description: 'Design sophistiqué avec typographie raffinée',
+    component: ElegantTemplate,
+    preview: '/api/placeholder/300/400',
+    category: 'Luxe',
+    features: ['Typographie serif', 'Design raffiné', 'Style sophistiqué']
   }
 ];
 

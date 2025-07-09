@@ -7,6 +7,11 @@ import ClassicTemplate from './templates/ClassicTemplate';
 import CreativeTemplate from './templates/CreativeTemplate';
 import MinimalistTemplate from './templates/MinimalistTemplate';
 import ProfessionalTemplate from './templates/ProfessionalTemplate';
+import AcademicTemplate from './templates/AcademicTemplate';
+import ExecutiveTemplate from './templates/ExecutiveTemplate';
+import TwoColumnTemplate from './templates/TwoColumnTemplate';
+import CompactTemplate from './templates/CompactTemplate';
+import ElegantTemplate from './templates/ElegantTemplate';
 
 const templateComponents = {
   modern: ModernTemplate,
@@ -14,6 +19,11 @@ const templateComponents = {
   creative: CreativeTemplate,
   minimalist: MinimalistTemplate,
   professional: ProfessionalTemplate,
+  academic: AcademicTemplate,
+  executive: ExecutiveTemplate,
+  twocolumn: TwoColumnTemplate,
+  compact: CompactTemplate,
+  elegant: ElegantTemplate,
 };
 
 const CVPreview = ({ cvData, theme, selectedTemplate = 'modern' }) => {
