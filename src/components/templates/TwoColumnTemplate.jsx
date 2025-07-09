@@ -16,6 +16,14 @@ const TwoColumnTemplate = ({ cvData, theme }) => {
     '--cv-text': theme.text,
   };
 
+  const cvStyle = {
+    '--cv-primary': theme.primary,
+    '--cv-secondary': theme.secondary,
+    '--cv-accent': theme.accent,
+    '--cv-background': theme.background,
+    '--cv-text': theme.text,
+  };
+
   return (
     <div className="two-column-template bg-white shadow-lg" style={cvStyle}>
       <div className="grid grid-cols-1 lg:grid-cols-5 min-h-screen">

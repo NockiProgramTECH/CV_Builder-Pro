@@ -16,6 +16,14 @@ const AcademicTemplate = ({ cvData, theme }) => {
     '--cv-text': theme.text,
   };
 
+  const cvStyle = {
+    '--cv-primary': theme.primary,
+    '--cv-secondary': theme.secondary,
+    '--cv-accent': theme.accent,
+    '--cv-background': theme.background,
+    '--cv-text': theme.text,
+  };
+
   return (
     <div className="academic-template bg-white shadow-lg font-serif" style={cvStyle}>
       <div className="p-8 space-y-6 max-w-4xl mx-auto">

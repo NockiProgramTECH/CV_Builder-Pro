@@ -16,6 +16,14 @@ const CompactTemplate = ({ cvData, theme }) => {
     '--cv-text': theme.text,
   };
 
+  const cvStyle = {
+    '--cv-primary': theme.primary,
+    '--cv-secondary': theme.secondary,
+    '--cv-accent': theme.accent,
+    '--cv-background': theme.background,
+    '--cv-text': theme.text,
+  };
+
   return (
     <div className="compact-template bg-white shadow-lg font-sans" style={cvStyle}>
       <div className="p-6 space-y-4 max-w-4xl mx-auto">

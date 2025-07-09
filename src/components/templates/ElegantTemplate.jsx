@@ -16,6 +16,14 @@ const ElegantTemplate = ({ cvData, theme }) => {
     '--cv-text': theme.text,
   };
 
+  const cvStyle = {
+    '--cv-primary': theme.primary,
+    '--cv-secondary': theme.secondary,
+    '--cv-accent': theme.accent,
+    '--cv-background': theme.background,
+    '--cv-text': theme.text,
+  };
+
   return (
     <div className="elegant-template bg-white shadow-xl font-serif" style={cvStyle}>
       <div className="p-10 space-y-8 max-w-5xl mx-auto">

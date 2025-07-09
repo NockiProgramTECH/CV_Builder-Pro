@@ -16,6 +16,14 @@ const ExecutiveTemplate = ({ cvData, theme }) => {
     '--cv-text': theme.text,
   };
 
+  const cvStyle = {
+    '--cv-primary': theme.primary,
+    '--cv-secondary': theme.secondary,
+    '--cv-accent': theme.accent,
+    '--cv-background': theme.background,
+    '--cv-text': theme.text,
+  };
+
   return (
     <div className="executive-template bg-white shadow-xl" style={cvStyle}>
       {/* Header exécutif avec bande colorée */}
