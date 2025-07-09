@@ -232,7 +232,7 @@ const CreativeTemplate = ({ cvData, theme }) => {
             {cvData.skills.length > 0 && (
               <section>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: theme.primary }}>
-                  💪 Mes super-pouvoirs
+                  💪 Experience Professionnelle
                 </h2>
                 <div className="space-y-3">
                   {cvData.skills.map((skill, index) => (
